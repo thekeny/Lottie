@@ -1,0 +1,132 @@
+/* Standalone 404 using the landing's own palette, fonts and original mascot. */
+html.error-page { scroll-snap-type:none; scrollbar-width:auto }
+.error-body { min-width:320px; min-height:100svh }
+.error-header { position:absolute }
+.error-header .skip-link { left:var(--edge) }
+.error-header .wordmark { transition:color .2s }
+.error-header .wordmark:hover { color:var(--mint) }
+.error-header .wordmark img { transition:transform .2s var(--ease) }
+.error-header .wordmark:hover img { transform:translateY(-2px) }
+.error-main { width:100% }
+.error-content {
+  min-height:100svh;
+  display:grid;
+  place-items:center;
+  padding:128px var(--edge) 80px;
+  text-align:center
+}
+.error-wrap { width:100% }
+.error-art {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:clamp(40px,5vw,72px);
+  user-select:none;
+  animation:error-arrival .7s var(--ease) both
+}
+.error-code {
+  color:var(--mint);
+  font-size:clamp(160px,22vw,300px);
+  font-weight:700;
+  line-height:.85;
+  letter-spacing:-.075em;
+  padding-right:.075em
+}
+.error-mascot {
+  display:block;
+  position:relative;
+  flex:none;
+  width:clamp(100px,12vw,160px);
+  aspect-ratio:780 / 1260;
+  transition:translate .3s var(--ease)
+}
+.error-pose {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  transition:opacity .18s
+}
+.error-pose-happy { opacity:0 }
+.error-mascot:hover .error-pose-normal,
+.error-content:has(.error-home:hover) .error-pose-normal,
+.error-content:has(.error-home:focus-visible) .error-pose-normal { opacity:0 }
+.error-mascot:hover .error-pose-happy,
+.error-content:has(.error-home:hover) .error-pose-happy,
+.error-content:has(.error-home:focus-visible) .error-pose-happy { opacity:1 }
+.error-mascot:hover,
+.error-content:has(.error-home:hover) .error-mascot,
+.error-content:has(.error-home:focus-visible) .error-mascot { translate:0 -4px }
+.error-copy {
+  margin-top:40px;
+  animation:error-arrival .7s .1s var(--ease) both
+}
+.error-copy h1 {
+  font-size:28px;
+  letter-spacing:-.05em;
+  line-height:1.2;
+  text-wrap:balance
+}
+.error-copy h1:focus-visible { outline:2px solid var(--cyan); outline-offset:8px }
+.error-home {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:10px;
+  min-height:52px;
+  margin-top:24px;
+  padding:14px 22px;
+  background:var(--mint);
+  color:var(--green);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:-.025em;
+  transition:background .2s,transform .2s var(--ease)
+}
+.error-home-arrow {
+  font-size:20px;
+  font-weight:400;
+  line-height:1;
+  transition:transform .2s var(--ease)
+}
+.error-home:hover { background:var(--white); transform:translateY(-2px) }
+.error-home:hover .error-home-arrow { transform:translate(-2px,-2px) }
+.error-home:active { transform:scale(.96) }
+.sr-only {
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip-path:inset(50%);
+  white-space:nowrap;
+  border:0
+}
+@keyframes error-arrival {
+  from { opacity:0; transform:translateY(12px) }
+  to { opacity:1; transform:translateY(0) }
+}
+@media (max-width:600px) {
+  .error-content { padding:112px var(--edge) 64px }
+  .error-art { gap:24px }
+  .error-code { font-size:clamp(92px,26vw,156px) }
+  .error-mascot { width:clamp(58px,17vw,90px) }
+  .error-copy { margin-top:32px }
+  .error-copy h1 { font-size:24px }
+}
+@media (max-height:600px) and (min-width:601px) {
+  .error-content { padding-top:104px; padding-bottom:32px }
+  .error-code { font-size:180px }
+  .error-mascot { width:100px }
+  .error-copy { margin-top:24px }
+}
+@media (prefers-reduced-motion:reduce) {
+  .error-art,.error-copy { animation:none }
+  .error-body *, .error-body *::before, .error-body *::after { transition:none }
+  .error-content .error-mascot { translate:none }
+  .error-home:hover,.error-home:active,
+  .error-home:hover .error-home-arrow,
+  .error-header .wordmark:hover img { transform:none }
+}

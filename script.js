@@ -103,7 +103,7 @@ const orbitImages = [...document.querySelectorAll('.orbit-slot img')];
 let emotionTimer = null;
 let emotionPhase = 'idle';
 let centralIndex = 0;
-const emotionPath = index => `images/emoji_${String(index + 1).padStart(2, '0')}.png`;
+const emotionPath = index => `images/lottie-emoji/emoji_${String(index + 1).padStart(2, '0')}.png`;
 // Decode before the central sequence so quick swaps never flash an unloaded image.
 for (let i = 0; i < 12; i++) { const image = new Image(); image.src = emotionPath(i); }
 

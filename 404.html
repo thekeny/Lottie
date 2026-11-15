@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ru" data-type="software" class="error-page">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- GitHub Pages keeps the missing URL, so assets must use the project root. -->
+  <base href="/Lottie/">
+  <script>
+    if (!location.hostname.endsWith('.github.io')) {
+      const local = location.protocol === 'file:' || ['localhost', '127.0.0.1', '[::1]'].includes(location.hostname);
+      document.querySelector('base').href = local ? new URL('./', location.href).href : '/';
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelector('.skip-link').href = location.href.split('#')[0] + '#error-title';
+    });
+  </script>
+  <meta name="theme-color" content="#00402E">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Лотти нашёлся, а страница — нет. Вернёмся домой?">
+  <meta name="page-type" content="software">
+  <meta name="site-kind" content="software">
+  <meta property="og:title" content="404 — Лотти потерял страницу">
+  <meta property="og:description" content="Страница потерялась. Лотти поможет вернуться домой.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/lottie-emoji/emoji_09.png">
+  <title>404</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="404.css">
+</head>
+<body class="error-body">
+  <header class="site-header error-header nav">
+    <a class="skip-link" href="#error-title">К содержанию</a>
+    <a class="wordmark" href="./index.html" aria-label="Лотти — на главную"><img src="images/lottie-emoji/emoji_07.png" width="1300" height="675" alt="">лотти.</a>
+  </header>
+  <main class="error-main" id="main">
+    <!-- Existing landing palette and Inter. One screen, one action, the original mascot. -->
+    <section class="error-content hero" aria-labelledby="error-title" data-enter>
+      <div class="wrap error-wrap">
+        <div class="hero-text">
+          <div class="error-art" aria-hidden="true" data-visual>
+            <span class="error-code">404</span>
+            <span class="error-mascot">
+              <img class="error-pose error-pose-normal sprite" src="images/lottie/lotti_01.png" width="780" height="1260" alt="" fetchpriority="high">
+              <img class="error-pose error-pose-happy sprite" src="images/lottie/lottie_06.png" width="780" height="1260" alt="">
+            </span>
+          </div>
+          <div class="error-copy">
+            <h1 id="error-title" tabindex="-1"><span class="sr-only">Ошибка 404. </span>Не туда.</h1>
+            <a class="error-home" href="./index.html"><span class="error-home-arrow" aria-hidden="true">↖</span>Назад</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
