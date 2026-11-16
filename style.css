@@ -101,6 +101,7 @@ img {
   align-items:center;
   justify-content:space-between;
   padding:0 var(--edge);
+  background:var(--green);
   z-index:20;
   pointer-events:none
 }
@@ -1240,8 +1241,8 @@ html:not(.deck-ready) .slide-arrows {
   margin-top:32px;
   padding:14px 24px;
   border-radius:0;
-  background:var(--mint);
-  color:var(--green);
+  background:#FF775F;
+  color:black;
   font-size:16px;
   font-weight:700;
   transition:background .25s,transform .25s var(--ease);
